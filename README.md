@@ -17,9 +17,8 @@ independently rather than copied from lab guides.
 | 01 | [NetFlow Traffic Observation](lab-01-netflow-observation/) | Packet Tracer | Interpreting flow records, 5-tuple analysis, DNS vs HTTP traffic |
 | 02 | [Syslog, AAA, and NetFlow Monitoring](lab-02-syslog-aaa-netflow/) | Packet Tracer | Centralised logging, TACACS+ access auditing, SIEM concepts |
 | 03 | [Wireshark: Telnet vs SSH](lab-03-wireshark-telnet-ssh/) | Wireshark · Linux | Packet capture, plaintext credential exposure, encryption verification |
-| 06 | [Incident Response: System Information Gathering](lab-06-incident-response-system-info/) | Linux CLI | Volatile data collection, open port triage, log analysis |
+| 04 | [Incident Response: System Information Gathering](lab-04-incident-response-system-info/) | Linux CLI | Volatile data collection, open port triage, log analysis |
 
-> Labs 04 and 05 are in progress and will be added on completion.
 
 ---
 
