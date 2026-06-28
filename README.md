@@ -72,7 +72,7 @@ cyber-essentials-labs/
 ├── lab-01-netflow-observation/
 ├── lab-02-syslog-aaa-netflow/
 ├── lab-03-wireshark-telnet-ssh/
-└── lab-06-incident-response-system-info/
+└── lab-04-incident-response-system-info/
 ```
 
 Each lab folder contains:
