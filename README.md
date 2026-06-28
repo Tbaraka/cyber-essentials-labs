@@ -18,7 +18,7 @@ independently rather than copied from lab guides.
 | 02 | [Syslog, AAA, and NetFlow Monitoring](lab-02-syslog-aaa-netflow/) | Packet Tracer | Centralised logging, TACACS+ access auditing, SIEM concepts |
 | 03 | [Wireshark: Telnet vs SSH](lab-03-wireshark-telnet-ssh/) | Wireshark · Linux | Packet capture, plaintext credential exposure, encryption verification |
 | 04 | [Incident Response: System Information Gathering](lab-04-incident-response-system-info/) | Linux CLI | Volatile data collection, open port triage, log analysis |
-
+| 05 | [Investigate a Threat Landscape](lab-05-investigate-a-threat-landscape/) | Packet Tracer | Threat landscape analysis, social engineering, rogue AP and DNS hijacking |
 
 ---
 
@@ -49,6 +49,12 @@ time-sensitive evidence first. Identifying anomalous findings including
 unexpected listening services, unknown login attempts, and suspicious
 routing entries.
 
+**Threat Landscape and Attack Vectors**
+Identifying how misconfigurations, phishing, and rogue access points can be
+combined into chained attacks. Demonstrating the importance of secure
+network segmentation, user awareness, and DNS integrity in preventing real-world
+compromise.
+
 ---
 
 ## Cyber Essentials Control Mapping
@@ -60,7 +66,7 @@ routing entries.
 | User Access Control | 02 — TACACS+ centralised authentication and session auditing |
 | Malware Protection | — |
 | Patch Management | — |
-| Security Monitoring *(Plus)* | 02, 06 — Syslog, AAA logging, and volatile data collection for IR |
+| Security Monitoring *(Plus)* | 02, 05 — Syslog, AAA logging, threat landscape analysis, and incident visibility |
 
 ---
 
@@ -72,7 +78,8 @@ cyber-essentials-labs/
 ├── lab-01-netflow-observation/
 ├── lab-02-syslog-aaa-netflow/
 ├── lab-03-wireshark-telnet-ssh/
-└── lab-04-incident-response-system-info/
+├── lab-04-incident-response-system-info/
+└── lab-05-investigate-a-threat-landscape/
 ```
 
 Each lab folder contains:
