@@ -55,7 +55,7 @@ network. Using it, she attempts to reach devices on the internal home network
 
 **Step 1 — External device reaches internal webcam**
 
-![Webcam ping from external smartphone](screenshots/01-successful-webcam-ping.png)
+![Smartphone 3 using guest WiFi to ping internal webcam at 192.168.100.101 in a terminal window. Command output shows 4 packets sent, 4 packets received, and 0 percent packet loss, indicating successful access across guest and internal networks.](screenshots/01-successful-webcam-ping.png)
 
 Smartphone 3, connected to the guest network from outside the home, pinged
 the internal webcam at `192.168.100.101` successfully — 4 packets sent,
@@ -67,14 +67,14 @@ access to all internal devices.
 
 **Step 2 — Identify the vulnerability in the router**
 
-![Home Office PC ipconfig](screenshots/02-default-gateway.png)
+![Home Office PC ipconfig output showing IPv4 default gateway set to 192.168.100.1. This indicates the router management interface can be reached from the local computer.](screenshots/02-default-gateway.png)
 
 `ipconfig` on the Home Office PC confirmed the default gateway as
 `192.168.100.1`. Accessing this via the web browser with default credentials
 (`admin` / `admin`) — which had never been changed — revealed the router
 configuration.
 
-![Guest network misconfiguration](screenshots/03-guest-network-settings.png)
+![Router guest network settings screen showing guest profile active on 5 GHz SSID Guestal. Security mode is disabled, SSID broadcast is enabled, and allow guests to access local network is checked, revealing insecure router configuration.](screenshots/03-guest-network-settings.png)
 
 The Guest Network settings showed:
 
@@ -111,7 +111,7 @@ prize claim to bypass the victim's critical thinking.
 
 ### The phishing email
 
-![Phishing email composed](screenshots/04-phishing-email.png)
+![Phishing email draft in Packet Tracer mail client with subject Limited offer. Body says congrats !!! You have won an IPHONE 17 PRO MAX head to pix.example.com to claim your reward NOW, using urgent language and a prize lure.](screenshots/04-phishing-email.png)
 
 **Subject:** Limited offer  
 **Body:** "Congrats !!! You have won an IPHONE 17 PRO MAX. Head to
@@ -126,14 +126,14 @@ pix.example.com to claim your reward NOW!!"
 
 ### Delivery and receipt
 
-![Received phishing email on victim device](screenshots/05-received-phishing-email.png)
+![Victim laptop inbox displaying phishing message received from jim@mail.isp.net to user3@mail.isp.net with subject Limited offer and body matching the malicious prize claim, showing no email filtering blocked it.](screenshots/05-received-phishing-email.png)
 
 The email was received on Laptop BR-1 as `user3@mail.isp.net`. The content
 is identical to what was sent — no mail filtering intercepted it.
 
 ### Payload — ransomware
 
-![Ransomware screen](screenshots/06-ransomware.png)
+![Browser window showing ransomware warning styled like WannaCry Decryptor 2.0. Text states Ooops your files have been encrypted demand 600 in cryptocurrency deadline payment escalates after 20 5 2017 01 00 00 and threat files permanently lost after 21 5 2017 01 00 00, conveying alarm and urgency.](screenshots/06-ransomware.png)
 
 When the victim navigated to `http://pix.example.com`, the page loaded a
 ransomware screen styled after the real-world **WannaCry** ransomware
@@ -169,7 +169,7 @@ victim connecting to the wrong WiFi network.
 
 ### The attacker's equipment
 
-![Hacker backpack contents](screenshots/07-backpack-contents.png)
+![Hacker backpack inventory listing Cafe_Hacker_Sniffer network sniffer and Wireless Router0 rogue access point broadcasting Cafe_WI-FI_FAST. The screenshot shows attacker equipment in a Packet Tracer asset list.](screenshots/07-backpack-contents.png)
 
 The hacker's backpack contained:
 - **Cafe_Hacker_Sniffer** — network sniffer to capture victim traffic
@@ -189,7 +189,7 @@ prioritising speed or convenience connects to the rogue network.
 
 **Stage 2 — Malicious DHCP assigns attacker as DNS server**
 
-![Hacker DHCP service](screenshots/08-dhcp-service-hacker.png)
+![DHCP service configuration screen showing hacker DHCP distributing DNS server 192.168.10.199, default gateway 192.168.0.5, and IP pool 192.168.10.0/24 for the rogue access point.](screenshots/08-dhcp-service-hacker.png)
 
 The hacker laptop's DHCP service distributes:
 
@@ -208,7 +208,7 @@ returns the malicious IP.
 
 **Stage 4 — Victim IP configuration confirms the attack**
 
-![IP config comparison](screenshots/09-ipconfig-comparison.png)
+![Side by side IP configuration comparison showing VPN Laptop and Cafe Customer both using DNS server 192.168.10.199 and default gateway 192.168.10.198 with different IPv4 addresses, confirming both clients received the malicious DNS setting.](screenshots/09-ipconfig-comparison.png)
 
 Side-by-side comparison of VPN Laptop vs Cafe Customer:
 
@@ -222,13 +222,13 @@ Both devices received the hacker's IP (`192.168.10.199`) as their DNS server
 via DHCP — confirming the rogue DHCP server successfully poisoned both
 clients.
 
-![Cafe Customer IP config](screenshots/10-ip-config-cafe-customer.png)
+![Cafe Customer IP configuration screen confirming DNS server 192.168.10.199 assigned by the rogue DHCP server, highlighting the malicious resolver in the victim device settings.](screenshots/10-ip-config-cafe-customer.png)
 
 Cafe Customer independently confirmed DNS Server = `192.168.10.199`.
 
 ### Simulation limitation
 
-![Host name unresolved](screenshots/11-hostname-unresolved.png)
+![Browser or terminal screenshot showing host name unresolved error when attempting to access http://friends.example.com in Packet Tracer, illustrating the simulation limitation despite the attack configuration.](screenshots/11-hostname-unresolved.png)
 
 Despite the attack chain being fully configured and verified at every stage,
 Packet Tracer returned "Host Name Unresolved" when the Cafe Customer browser
